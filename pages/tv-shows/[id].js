@@ -35,14 +35,7 @@ const Details = (props)=> {
 }
 
 export async function getStaticPaths() {
-  const res = await fetch(`${baseurl}search/shows?q=avengers`)
-  const shows = await res.json()
-  const paths = getAllDataIds(shows)
-
-  return {
-    paths,
-    fallback: false
-  }
+    return { paths: [], fallback: true };
 }
 
 export async function getStaticProps(context) {

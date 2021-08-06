@@ -34,7 +34,7 @@ const Avengers = (props) => {
 export async function getStaticProps() {
   const res = await fetch(`${baseurl}search/shows?q=avengers`)
   const shows = await res.json()
-
+  
   return {
     props: {
       shows
