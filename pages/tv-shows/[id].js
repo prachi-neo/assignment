@@ -5,8 +5,10 @@ import {getAllDataIds,getAvengerData} from '../../lib/avenger.js'
 import {ImagePlaceholder,baseurl} from '../../lib/constant.js'
 import Star from '../../public/images/star.png'
 import Back from '../../public/images/back.png'
+import style from '../css/avenger.module.css'
 
-const Second = (props)=> {
+
+const Details = (props)=> {
   const {show} = props
 
   return (
@@ -24,7 +26,7 @@ const Second = (props)=> {
       </div>}
       <img
           placeholder="blur"
-          style={{objectFit:'cover',height:'100%', width:300}}
+          className={style.image}
           src={show?.image?.medium || ImagePlaceholder}
           alt="..."
         />
@@ -56,4 +58,4 @@ export async function getStaticProps(context) {
 }
 
 
-export default Second
+export default Details

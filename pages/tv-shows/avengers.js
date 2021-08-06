@@ -1,11 +1,9 @@
-import Image from 'next/image'
 import Head from 'next/head'
-import Link from 'next/link'
 
 import Card from '../component/card'
 import style from '../css/avenger.module.css'
 
-import {getPostData} from '../../lib/avenger.js'
+import {baseurl} from '../../lib/constant.js'
 
 const Avengers = (props) => {
   const {shows} = props
@@ -34,7 +32,7 @@ const Avengers = (props) => {
 }
 
 export async function getStaticProps() {
-  const res = await fetch('https://api.tvmaze.com/search/shows?q=avengers')
+  const res = await fetch(`${baseurl}search/shows?q=avengers`)
   const shows = await res.json()
 
   return {

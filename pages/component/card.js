@@ -11,7 +11,7 @@ export default function Card (props) {
     <div className={style.imgContainer}>
         <img
             placeholder="blur"
-            style={{objectFit:'cover',height:'100%', width:300}}
+            className={style.image}
             src={data?.image?.medium || ImagePlaceholder}
             alt="..."
           />

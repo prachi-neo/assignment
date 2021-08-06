@@ -99,9 +99,9 @@
    max-width: 500px;
 }
 .image {
-  display: block;
-  width: 100%;
-  height: auto;
+  object-fit: cover;
+  height: 100%;
+  width: 300px;
 }
 .overlay {
   position: absolute;
