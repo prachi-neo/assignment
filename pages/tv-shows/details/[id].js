@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import Head from 'next/head'
+import {useRouter} from 'next/router'
 
 import {getAllDataIds,getAvengerData} from '../../../lib/avenger.js'
 import {ImagePlaceholder,baseurl} from '../../../lib/constant.js'
@@ -11,17 +12,15 @@ import style from '../../css/avenger.module.css'
 
 const Details = (props)=> {
   const {show} = props
+  const router = useRouter()
 
   return (
     show ? <div style={{padding:10}}>
       <Head>
         <meta name="title" content={show.name}></meta>
       </Head>
-      <Link href="/">
-        <a>
-          <Image src={Back} height={30} width={30}/>
-        </a>
-      </Link>
+      <Image src={Back} height={30} width={30} onClick={() => router.back()}/>
+      
       <h1>{show.name}</h1>
       <div dangerouslySetInnerHTML={{__html: show.summary}}></div>
       <p>type: {show.type} </p>
