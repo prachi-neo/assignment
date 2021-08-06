@@ -1,25 +1,33 @@
 import Image from 'next/image'
+import Link from 'next/Link'
+
 import {getAllDataIds,getAvengerData} from '../../lib/avenger.js'
-import Star from '../../public/images/star.png'
 import {ImagePlaceholder,baseurl} from '../../lib/constant.js'
+import Star from '../../public/images/star.png'
+import Back from '../../public/images/back.png'
 
 const Second = (props)=> {
   const {show} = props
 
   return (
     <div style={{padding:10}}>
-    <h1>{show.name}</h1>
-    <div dangerouslySetInnerHTML={{__html: show.summary}}></div>
-    <p>type: {show.type} </p>
-    {show?.rating?.average &&  <div>
-       <Image src={Star} height={20} width={20}/> {show?.rating?.average}
-    </div>}
-    <img
-        placeholder="blur"
-        style={{objectFit:'cover',height:'100%', width:300}}
-        src={show?.image?.medium || ImagePlaceholder}
-        alt="..."
-      />
+      <Link href="/tv-shows/avengers">
+        <a>
+          <Image src={Back} height={30} width={30}/>
+        </a>
+      </Link>
+      <h1>{show.name}</h1>
+      <div dangerouslySetInnerHTML={{__html: show.summary}}></div>
+      <p>type: {show.type} </p>
+      {show?.rating?.average &&  <div>
+         <Image src={Star} height={20} width={20}/> {show?.rating?.average}
+      </div>}
+      <img
+          placeholder="blur"
+          style={{objectFit:'cover',height:'100%', width:300}}
+          src={show?.image?.medium || ImagePlaceholder}
+          alt="..."
+        />
     </div>
   )
 }
