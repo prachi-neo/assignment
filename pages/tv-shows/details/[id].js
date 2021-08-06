@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import Head from 'next/Head'
+import Head from 'next/head'
 
 import {getAllDataIds,getAvengerData} from '../../../lib/avenger.js'
 import {ImagePlaceholder,baseurl} from '../../../lib/constant.js'
