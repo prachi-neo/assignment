@@ -16,7 +16,7 @@ export default function Card (props) {
             alt="..."
           />
           <div className={style.overlay}>
-          <Link as={`/tv-shows/${data.id}`} href={`/tv-shows/[id]`}>
+          <Link as={`/tv-shows/details/${data.id}`} href={`/tv-shows/details/[id]`}>
             <a>
               <h3 className={style.avgText}>{data.name.toUpperCase()}</h3>
             </a>
